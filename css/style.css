@@ -1,0 +1,390 @@
+/* ==========================================================================
+   RajMahal - Core Design System & Base Layout
+   ========================================================================== */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* --- Root Variables (Luxury Theme) --- */
+:root {
+  /* Colors */
+  --bg-dark: #050505;
+  --bg-card: #0d0d0d;
+  --bg-royal: #1f010a;
+  --bg-royal-light: #300211;
+  --gold-primary: #D4AF37;
+  --gold-light: #f3e5ab;
+  --gold-dark: #aa771c;
+  --gold-gradient: linear-gradient(135deg, #b38728 0%, #fbf5b7 50%, #aa771c 100%);
+  --gold-metallic: linear-gradient(90deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+  --text-light: #FFFFF0; /* Ivory */
+  --text-muted: #b5b5b5;
+  --text-dark: #121212;
+  --white: #ffffff;
+  
+  /* Fonts */
+  --font-royal: 'Cinzel', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Transitions */
+  --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.2s ease-out;
+  --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --glow-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+  --glow-shadow-strong: 0 0 30px rgba(212, 175, 55, 0.3);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
+  /* Layout */
+  --container-width: 1320px;
+}
+
+/* --- Base Resets & Global Styles --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: var(--gold-primary);
+  color: var(--bg-dark);
+  text-shadow: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-dark);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Cursor support - Only hides cursor if pointer is fine (desktop) and custom-cursor class exists */
+@media (pointer: fine) {
+  body.has-custom-cursor {
+    cursor: none;
+  }
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor select,
+  body.has-custom-cursor input,
+  body.has-custom-cursor textarea,
+  body.has-custom-cursor .counter-btn,
+  body.has-custom-cursor .audio-toggle-container,
+  body.has-custom-cursor [data-lightbox],
+  body.has-custom-cursor .hero-indicator {
+    cursor: none !important;
+  }
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-light);
+  font-family: var(--font-royal);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Gold Gradient Text Utility --- */
+.gold-text {
+  background: var(--gold-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Golden Button / Link Animations --- */
+.btn-gold {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-family: var(--font-royal);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid var(--gold-primary);
+  background: transparent;
+  color: var(--gold-light);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  transition: var(--transition-smooth);
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-metallic);
+  z-index: -1;
+  transition: var(--transition-slow);
+}
+
+.btn-gold:hover {
+  color: var(--bg-dark);
+  box-shadow: var(--glow-shadow);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.btn-gold:hover::before {
+  left: 0;
+}
+
+.btn-outline-white {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-family: var(--font-royal);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 240, 0.3);
+  background: transparent;
+  color: var(--text-light);
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline-white:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  box-shadow: var(--glow-shadow);
+}
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Layout Sections --- */
+section {
+  padding: 8rem 0;
+  position: relative;
+  background-image: radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.04) 0%, transparent 65%);
+}
+
+/* Section Header styling */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem auto;
+}
+
+.section-subtitle {
+  font-family: var(--font-royal);
+  color: var(--gold-primary);
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-divider {
+  width: 140px;
+  height: 1px;
+  background: var(--gold-metallic);
+  margin: 1.8rem auto 0 auto;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.section-divider::after {
+  content: '◆';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+  background: var(--bg-dark);
+  padding: 0 0.8rem;
+  color: var(--gold-primary);
+  font-size: 0.8rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  transition: var(--transition-smooth);
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* --- Glassmorphism Card Style --- */
+.glass-card {
+  background: rgba(13, 13, 13, 0.45);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: 4px;
+}
+
+/* --- Parallax Sections --- */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* --- Scroll Animations (Reveal Engine) --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Delay Utilities */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-metallic);
+  border-radius: 10px;
+  border: 1px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+/* Section Divider Backdrops depending on section theme */
+section[style*="var(--bg-royal)"] .section-divider::after,
+.rooms-section .section-divider::after {
+  background: var(--bg-royal) !important;
+}
+
+section[style*="var(--bg-dark)"] .section-divider::after,
+.welcome-section .section-divider::after,
+.gastronomy-section .section-divider::after {
+  background: var(--bg-dark) !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+  .container {
+    padding: 0 1.2rem;
+  }
+}

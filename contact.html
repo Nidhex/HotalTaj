@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservations &amp; Contacts | RajMahal Palace Hotel Jaipur</title>
+  <meta name="description" content="Inquire about luxury suite stays, royal dining reservations, or custom event plans at RajMahal Palace. Connect with our 24-hour royal concierge today.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Custom Contact Page Styles */
+    .contact-hero {
+      height: 50vh;
+      background-image: linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,0.95)), url('https://images.unsplash.com/photo-1598977123418-45f04b01d4ac?q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 6rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 5rem;
+      align-items: flex-start;
+    }
+
+    .contact-details-box {
+      padding: 3rem;
+      border-radius: 4px;
+    }
+
+    .contact-method-card {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-method-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-method-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--gold-primary);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method-text h4 {
+      font-family: var(--font-royal);
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      color: var(--gold-primary);
+    }
+
+    .contact-method-text p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    .royal-map-mock {
+      border: 1px dashed rgba(212, 175, 55, 0.3);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin-top: 3rem;
+      text-align: center;
+      background: rgba(255,255,255,0.01);
+    }
+
+    @media (max-width: 991px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Luxury Royal Preloader -->
+  <div id="preloader">
+    <div class="preloader-brand">
+      <div class="preloader-mandala"></div>
+      <h1 class="preloader-logo gold-text">RAJM<span style="color:var(--text-light)">A</span>HAL</h1>
+      <p class="preloader-tagline">Timeless Majesty &bull; Royal Indian Hospitality</p>
+    </div>
+    <div class="preloader-bar-container">
+      <div class="preloader-bar"></div>
+    </div>
+  </div>
+
+  <!-- 2. Premium Floating Navbar -->
+  <div class="navbar-wrapper">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html" class="navbar-logo">RAJM<span>A</span>HAL</a>
+        <span class="navbar-tagline">Palace & Resorts</span>
+      </div>
+      
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="rooms.html" class="navbar-link">Suites</a></li>
+        <li><a href="dining.html" class="navbar-link">Dining</a></li>
+        <li><a href="spa.html" class="navbar-link">Wellness</a></li>
+        <li><a href="events.html" class="navbar-link">Events</a></li>
+        <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+        <li><a href="about.html" class="navbar-link">Heritage</a></li>
+        <li><a href="contact.html" class="navbar-link active">Reservations</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <!-- Ambient sound controller -->
+        <div class="audio-toggle-container" title="Toggle royal Indian ambiance audio">
+          <span class="audio-label">Ambiance: OFF</span>
+          <div class="audio-bars">
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.75rem;">Book Stay</a>
+      </div>
+
+      <button class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- 3. Contact Hero Banner -->
+  <header class="contact-hero">
+    <div class="container">
+      <div class="reveal-scale">
+        <span class="section-subtitle">24-Hour Royal Concierge Desk</span>
+        <h1 class="gold-text" style="font-size: clamp(2rem, 5vw, 4rem);">Initiate Stay</h1>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4. Contact Details & Booking Form Grid -->
+  <section style="background-color: var(--bg-dark); padding-top: 5rem;">
+    <div class="container">
+      
+      <div class="contact-grid">
+        
+        <!-- Left Side: Contact Information -->
+        <div class="reveal-left">
+          <span class="section-subtitle" style="text-align: left; margin-bottom: 0.5rem;">Pranam &amp; Connect</span>
+          <h2 style="font-family: var(--font-serif); text-transform: capitalize; margin-bottom: 1.5rem; font-size: 2.2rem;">The Royal Ambassador</h2>
+          <p style="margin-bottom: 3rem; font-weight: 300; line-height: 1.7; font-size: 0.95rem;">
+            Whether you wish to arrange a grand wedding, reserve an imperial table at Durbar Hall, or tailor a private multi-week palace suite itinerary, our dedicated ambassadors are at your service.
+          </p>
+
+          <div class="contact-details-box glass-card">
+            
+            <!-- Contact Phone -->
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div class="contact-method-text">
+                <h4>Imperial Concierge Direct</h4>
+                <p>+91 141 234 5678</p>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">Direct inquiries available 24h &bull; Standard charges apply</p>
+              </div>
+            </div>
+
+            <!-- Contact Email -->
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <i class="fa-solid fa-envelope-open-text"></i>
+              </div>
+              <div class="contact-method-text">
+                <h4>Electronic Correspondence</h4>
+                <p>reservations@rajmahalpalace.com</p>
+                <p>events@rajmahalpalace.com</p>
+              </div>
+            </div>
+
+            <!-- Contact Location -->
+            <div class="contact-method-card">
+              <div class="contact-method-icon">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div class="contact-method-text">
+                <h4>Palace Estate Location</h4>
+                <p>RajMahal Palace, Palace Road</p>
+                <p>Jaipur, Rajasthan, 302001, India</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Styled Vector Map Block -->
+          <div class="royal-map-mock reveal-scale">
+            <h4 class="gold-text" style="font-size: 0.9rem; margin-bottom: 0.5rem; letter-spacing: 0.2em; font-family: var(--font-royal);">RajMahal Estate Map</h4>
+            <p style="font-size: 0.75rem; margin-bottom: 1.2rem; font-weight: 300;">Nestled securely in the historic green heart of the Pink City of Jaipur.</p>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(212,175,55,0.1); padding: 3rem 0; border-radius: 2px;">
+              <i class="fa-solid fa-compass" style="font-size: 2.2rem; color: var(--gold-primary); animation: rotateMandala 25s linear infinite; margin-bottom: 1rem; display: inline-block;"></i>
+              <p style="font-family: var(--font-serif); font-size: 0.85rem; font-style: italic;">[ 26.9124° N, 75.7873° E ]</p>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Complimentary private vintage airport pickups provided</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Complete Chamber Reservation Form -->
+        <div class="reveal-right">
+          <div class="glass-card" style="padding: 4rem 3rem;">
+            
+            <div style="text-align: center; margin-bottom: 3.5rem;">
+              <h3 class="gold-text" style="font-size: 1.6rem; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Suite Reservation Form</h3>
+              <p style="font-size: 0.8rem; font-weight: 300; text-transform: uppercase; letter-spacing: 0.1em;">Request Chamber Accommodations</p>
+            </div>
+
+            <form class="luxury-form" onsubmit="handleContactReserve(event)">
+              
+              <!-- Personal Details Row -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="form-group">
+                  <input type="text" id="reserve-name" class="luxury-input" placeholder=" " required>
+                  <label for="reserve-name" class="luxury-label">Full Name</label>
+                </div>
+                <div class="form-group">
+                  <input type="email" id="reserve-email" class="luxury-input" placeholder=" " required>
+                  <label for="reserve-email" class="luxury-label">Email Address</label>
+                </div>
+              </div>
+
+              <!-- Phone Details -->
+              <div class="form-group">
+                <input type="tel" id="reserve-tel" class="luxury-input" placeholder=" " required>
+                <label for="reserve-tel" class="luxury-label">Telephone Number (Including country code)</label>
+              </div>
+
+              <!-- Suite Class selector -->
+              <div class="form-group">
+                <select id="reserve-suite" class="luxury-input" style="color: var(--text-light); background-color: var(--bg-dark);" required>
+                  <option value="" disabled selected></option>
+                  <option value="presidential">Maharaja Presidential Suite (₹2,50,000 / night)</option>
+                  <option value="maharani">Maharani Signature Suite (₹1,20,000 / night)</option>
+                  <option value="garden">Palace Garden Villa (₹95,000 / night)</option>
+                  <option value="sanctuary">Grand Royal Sanctuary (₹85,000 / night)</option>
+                  <option value="lotus">Lotus Temple Pavilion (₹75,000 / night)</option>
+                  <option value="peacock">Peacock Heritage Room (₹55,000 / night)</option>
+                </select>
+                <label for="reserve-suite" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Select Accommodations</label>
+              </div>
+
+              <!-- Checkin/Checkout dates selector -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="form-group">
+                  <input type="date" id="reserve-checkin" class="luxury-input" required>
+                  <label for="reserve-checkin" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Arrival Date</label>
+                </div>
+                <div class="form-group">
+                  <input type="date" id="reserve-checkout" class="luxury-input" required>
+                  <label for="reserve-checkout" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Departure Date</label>
+                </div>
+              </div>
+
+              <!-- Guests count selector -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="form-group">
+                  <select id="reserve-adults" class="luxury-input" style="color: var(--text-light); background-color: var(--bg-dark);">
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected>2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                    <option value="5">5+ Adults</option>
+                  </select>
+                  <label for="reserve-adults" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Adult Guests</label>
+                </div>
+                <div class="form-group">
+                  <select id="reserve-children" class="luxury-input" style="color: var(--text-light); background-color: var(--bg-dark);">
+                    <option value="0" selected>No Children</option>
+                    <option value="1">1 Child</option>
+                    <option value="2">2 Children</option>
+                    <option value="3">3+ Children</option>
+                  </select>
+                  <label for="reserve-children" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Child Guests</label>
+                </div>
+              </div>
+
+              <!-- Special remarks notes -->
+              <div class="form-group">
+                <input type="text" id="reserve-notes" class="luxury-input" placeholder=" ">
+                <label for="reserve-notes" class="luxury-label">Remarks, pick-up transfers or private events (Optional)</label>
+              </div>
+
+              <button type="submit" class="btn-gold" style="align-self: center; margin-top: 2rem;">Send Chamber Request</button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Floating Action Buttons (WhatsApp / Socials) -->
+  <a href="https://wa.me/911412345678?text=Pranam%20RajMahal,%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20stay." class="floating-whatsapp" target="_blank" title="Royal Concierge Inquiries">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.58 1.982 14.11 1.05 11.48 1.05c-5.44 0-9.863 4.37-9.867 9.801 0 1.63.454 3.223 1.314 4.634L1.93 21.13l5.862-1.526-.145-.45zM17.65 15.34c-.312-.156-1.848-.91-2.133-1.013-.284-.104-.49-.156-.697.156-.207.312-.803 1.013-.984 1.22-.18.207-.362.233-.674.078-1.545-.773-2.583-1.284-3.606-3.045-.27-.464.27-.43.774-1.436.084-.168.042-.314-.021-.443-.064-.13-.544-1.312-.746-1.795-.196-.474-.396-.41-.544-.417l-.464-.008c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2.01s.87 2.33.99 2.49c.12.16 1.71 2.62 4.15 3.67 1.83.79 2.5 1.01 3.4.85.54-.1.1.28.32-.23c.22-.52.22-1 .16-1.1s-.24-.16-.55-.315z"/>
+    </svg>
+  </a>
+
+  <!-- 6. Premium Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about-col">
+          <div class="footer-logo">RAJM<span>A</span>HAL</div>
+          <div class="footer-tagline">Royal Indian Hospitality</div>
+          <p class="footer-desc">
+            Step into a world of timeless majesty and unparalleled heritage, where the grandeur of ancient India meets modern-day five-star luxury.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="rooms.html" class="footer-link">Suites & Rooms</a></li>
+            <li><a href="dining.html" class="footer-link">Royal Dining</a></li>
+            <li><a href="spa.html" class="footer-link">Jiva Spa & Wellness</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Experiences</h4>
+          <ul class="footer-links">
+            <li><a href="events.html" class="footer-link">Weddings & Celebrations</a></li>
+            <li><a href="gallery.html" class="footer-link">Visual Gallery</a></li>
+            <li><a href="about.html" class="footer-link">Heritage & Story</a></li>
+            <li><a href="contact.html" class="footer-link">Reservations Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Royal Estate</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>RajMahal Palace, Palace Road, Jaipur, Rajasthan, 302001, India</span>
+            </li>
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 141 234 5678</span>
+            </li>
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>reservations@rajmahalpalace.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 RajMahal Palace & Resorts. All Rights Reserved. Crafted for Ultimate Luxury.</div>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+
+  <!-- Handle Room Reservation dates limits & confirmation dialog -->
+  <script>
+    const reserveIn = document.getElementById('reserve-checkin');
+    const reserveOut = document.getElementById('reserve-checkout');
+    
+    let todayStr = '';
+    let tomorrowStr = '';
+
+    if (reserveIn && reserveOut) {
+      todayStr = new Date().toISOString().split('T')[0];
+      reserveIn.min = todayStr;
+      reserveIn.value = todayStr;
+
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      tomorrowStr = tomorrow.toISOString().split('T')[0];
+      reserveOut.min = tomorrowStr;
+      reserveOut.value = tomorrowStr;
+
+      reserveIn.addEventListener('change', () => {
+        const checkinSelected = new Date(reserveIn.value);
+        checkinSelected.setDate(checkinSelected.getDate() + 1);
+        const nextStr = checkinSelected.toISOString().split('T')[0];
+        reserveOut.min = nextStr;
+        if (new Date(reserveOut.value) <= new Date(reserveIn.value)) {
+          reserveOut.value = nextStr;
+        }
+      });
+    }
+
+    function handleContactReserve(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('reserve-name').value;
+      const selectSuite = document.getElementById('reserve-suite');
+      const suite = selectSuite.options[selectSuite.selectedIndex].text;
+      const checkin = reserveIn.value;
+      const checkout = reserveOut.value;
+      const adults = document.getElementById('reserve-adults').value;
+      const children = document.getElementById('reserve-children').value;
+
+      // Custom themed confirmation modal
+      const modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100vw';
+      modal.style.height = '100vh';
+      modal.style.background = 'rgba(5, 5, 5, 0.9)';
+      modal.style.backdropFilter = 'blur(10px)';
+      modal.style.display = 'flex';
+      modal.style.justifyContent = 'center';
+      modal.style.alignItems = 'center';
+      modal.style.zIndex = '100000';
+      modal.style.opacity = '0';
+      modal.style.transition = 'opacity 0.5s ease';
+
+      modal.innerHTML = `
+        <div class="glass-card" style="padding: 4rem; max-width: 550px; text-align: center; border: 1px solid var(--gold-primary); box-shadow: var(--glow-shadow-strong);">
+          <div class="preloader-mandala" style="margin: 0 auto 2rem auto; width: 80px; height: 80px;"></div>
+          <h2 class="gold-text" style="font-size: 2rem; margin-bottom: 1.5rem;">Stay Request Logged</h2>
+          <p style="color: var(--text-light); margin-bottom: 1.5rem; font-family: var(--font-serif); font-style: italic;">
+            "Pranam ${name}. Your reservation dossier has been dispatched."
+          </p>
+          <div style="text-align: left; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 4px; margin-bottom: 2rem; border-left: 3px solid var(--gold-primary); font-size: 0.9rem;">
+            <div style="margin-bottom: 0.5rem;"><strong style="color: var(--gold-primary);">Accommodations:</strong> ${suite}</div>
+            <div style="margin-bottom: 0.5rem;"><strong style="color: var(--gold-primary);">Check-in:</strong> ${checkin}</div>
+            <div style="margin-bottom: 0.5rem;"><strong style="color: var(--gold-primary);">Check-out:</strong> ${checkout}</div>
+            <div><strong style="color: var(--gold-primary);">Guests:</strong> ${adults} Adults, ${children} Children</div>
+          </div>
+          <p style="font-size: 0.8rem; margin-bottom: 2rem; color: var(--text-muted);">
+            Our Royal Ambassador will verify chamber availability, assign personal butler services, and issue your official confirmation ledger.
+          </p>
+          <button class="btn-gold" id="close-modal-btn">Accept Invitation</button>
+        </div>
+      `;
+
+      document.body.appendChild(modal);
+      
+      setTimeout(() => {
+        modal.style.opacity = '1';
+      }, 50);
+
+      document.getElementById('close-modal-btn').addEventListener('click', () => {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+          modal.remove();
+          event.target.reset(); // clear form
+          if (reserveIn && reserveOut) {
+            reserveIn.value = todayStr;
+            reserveOut.value = tomorrowStr;
+          }
+        }, 500);
+      });
+    }
+  </script>
+</body>
+</html>

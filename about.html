@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Royal Heritage & Story | RajMahal Palace Hotel Jaipur</title>
+  <meta name="description" content="Discover the rich 300-year history of RajMahal Palace. Learn about our architectural preservation, royal Rajputana legacy, and legendary guest lineage.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Custom About Page Styles */
+    .about-hero {
+      height: 50vh;
+      background-image: linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,0.95)), url('https://images.unsplash.com/photo-1598977123418-45f04b01d4ac?q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 6rem;
+    }
+
+    /* History Timeline Layout */
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: var(--gold-metallic);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 6rem;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-badge {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -10%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--bg-dark);
+      border: 1px solid var(--gold-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--font-royal);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      z-index: 10;
+      box-shadow: var(--glow-shadow);
+    }
+
+    .timeline-content {
+      padding: 2.5rem;
+      border-radius: 4px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      grid-column: 2;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      grid-column: 1;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 2rem;
+      }
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+      }
+      .timeline-badge {
+        left: 2rem;
+        transform: translate(-50%, -30%);
+        width: 50px;
+        height: 50px;
+      }
+      .timeline-item:nth-child(even) .timeline-content,
+      .timeline-item:nth-child(odd) .timeline-content {
+        grid-column: 1;
+        text-align: left;
+        padding-left: 4rem;
+        padding-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Luxury Royal Preloader -->
+  <div id="preloader">
+    <div class="preloader-brand">
+      <div class="preloader-mandala"></div>
+      <h1 class="preloader-logo gold-text">RAJM<span style="color:var(--text-light)">A</span>HAL</h1>
+      <p class="preloader-tagline">Timeless Majesty &bull; Royal Indian Hospitality</p>
+    </div>
+    <div class="preloader-bar-container">
+      <div class="preloader-bar"></div>
+    </div>
+  </div>
+
+  <!-- 2. Premium Floating Navbar -->
+  <div class="navbar-wrapper">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html" class="navbar-logo">RAJM<span>A</span>HAL</a>
+        <span class="navbar-tagline">Palace & Resorts</span>
+      </div>
+      
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="rooms.html" class="navbar-link">Suites</a></li>
+        <li><a href="dining.html" class="navbar-link">Dining</a></li>
+        <li><a href="spa.html" class="navbar-link">Wellness</a></li>
+        <li><a href="events.html" class="navbar-link">Events</a></li>
+        <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+        <li><a href="about.html" class="navbar-link">Heritage</a></li>
+        <li><a href="contact.html" class="navbar-link">Reservations</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <!-- Ambient sound controller -->
+        <div class="audio-toggle-container" title="Toggle royal Indian ambiance audio">
+          <span class="audio-label">Ambiance: OFF</span>
+          <div class="audio-bars">
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.75rem;">Book Stay</a>
+      </div>
+
+      <button class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- 3. About Hero Banner -->
+  <header class="about-hero">
+    <div class="container">
+      <div class="reveal-scale">
+        <span class="section-subtitle">A Narrative of Timeless Elegance</span>
+        <h1 class="gold-text" style="font-size: clamp(2rem, 5vw, 4rem);">Our Royal Story</h1>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4. Philosophy Editorial -->
+  <section style="background-color: var(--bg-dark);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Our Ethos</span>
+        <h2>Atithi Devo Bhava</h2>
+        <div class="section-divider"></div>
+        <p style="margin-top: 1.5rem; font-family: var(--font-serif); font-size: 1.15rem; font-style: italic;">
+          "The guest is indeed an incarnation of the Divine. At RajMahal, hospitality is not a profession—it is a sacred royal legacy."
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 5rem;">
+        <div class="reveal-left">
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; font-weight: 300;">
+            RajMahal Palace stands as a living testament to Rajputana architecture, blending the symmetrical geometry of Mughal gardens with local pink sandstone and intricate hand-carved arches. For nearly three centuries, these walls have hosted grand coronation feasts, deep state negotiations, and international celebrations.
+          </p>
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; font-weight: 300;">
+            In translating this historical sanctuary into a five-star resort, our guiding star has been absolute architectural preservation. We employed legendary local artisans to carefully clean the original lime murals, restore brass gates, and maintain the ancient brick layouts.
+          </p>
+        </div>
+        <div class="reveal-right">
+          <p style="margin-bottom: 1.5rem; line-height: 1.8; font-weight: 300;">
+            Every single suite features block-print fabrics woven by fifth-generation weaver families, coupled with carefully curated family heirlooms on display. 
+          </p>
+          <p style="margin-bottom: 2rem; line-height: 1.8; font-weight: 300;">
+            We believe that true luxury lies in absolute personalization. Your hosts are highly trained ambassadors of the heritage, ensuring your stays are seamless, private, and thoroughly unforgettable.
+          </p>
+          <a href="rooms.html" class="btn-gold">Explore the Chambers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Interactive Chronicles Timeline -->
+  <section style="background-color: var(--bg-royal); overflow: hidden;">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Through the Centuries</span>
+        <h2>Chronicles of RajMahal</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="timeline">
+        
+        <!-- Timeline 1 -->
+        <div class="timeline-item">
+          <div class="timeline-badge">1729</div>
+          <div class="timeline-content glass-card reveal-left">
+            <h4 class="gold-text" style="font-size: 1.1rem; margin-bottom: 0.8rem;">Royal Sanctuary Commissioned</h4>
+            <p style="font-size: 0.85rem; font-weight: 300; line-height: 1.6;">
+              Maharajah Sawai Jai Singh II commissions the estate as a private royal retreat and orchard pavilion for the Queen, featuring symmetrical channels of running river water and grand stone arches.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline 2 -->
+        <div class="timeline-item">
+          <div class="timeline-badge">1821</div>
+          <div class="timeline-content glass-card reveal-right">
+            <h4 class="gold-text" style="font-size: 1.1rem; margin-bottom: 0.8rem;">The British Residency era</h4>
+            <p style="font-size: 0.85rem; font-weight: 300; line-height: 1.6;">
+              Designated as the official high-security residence of the British Political Resident in Rajputana, witnessing major historical conferences, treaty signings, and military assemblies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline 3 -->
+        <div class="timeline-item">
+          <div class="timeline-badge">1958</div>
+          <div class="timeline-content glass-card reveal-left">
+            <h4 class="gold-text" style="font-size: 1.1rem; margin-bottom: 0.8rem;">Opening to Global Elites</h4>
+            <p style="font-size: 0.85rem; font-weight: 300; line-height: 1.6;">
+              Converted into an ultra-luxury boutique hotel, quickly establishing itself as a global sanctuary for world leaders, monarchs, and artists including Queen Elizabeth II, Jackie Kennedy, and Lord Mountbatten.
+            </p>
+          </div>
+        </div>
+
+        <!-- Timeline 4 -->
+        <div class="timeline-item">
+          <div class="timeline-badge">2021</div>
+          <div class="timeline-content glass-card reveal-right">
+            <h4 class="gold-text" style="font-size: 1.1rem; margin-bottom: 0.8rem;">Historical Grand Restoration</h4>
+            <p style="font-size: 0.85rem; font-weight: 300; line-height: 1.6;">
+              A magnificent, highly meticulous architectural restoration brings five-star cooling, heating, acoustic insulation, and modern plumbing systems, fully hidden behind historic sandstone structures.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Immersive Quote -->
+  <section class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1506461883276-594a12b11cc3?q=80&w=1600'); padding: 10rem 0;">
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(5,5,5,0.9); z-index:1;"></div>
+    <div class="container" style="position: relative; z-index: 2; text-align: center; max-width: 800px;">
+      <div class="reveal-scale">
+        <i class="fa-solid fa-quote-left" style="font-size: 3.5rem; color: rgba(212, 175, 55, 0.2); margin-bottom: 2rem;"></i>
+        <p style="font-family: var(--font-serif); font-size: clamp(1.2rem, 3vw, 1.8rem); font-style: italic; line-height: 1.6; margin-bottom: 2.5rem; color: var(--text-light);">
+          "We do not inherit this palace from our ancestors; we borrow it from our descendants. Our duty is to ensure its grandeur remains clean, pure, and absolutely timeless."
+        </p>
+        <span class="section-subtitle" style="font-size: 0.8rem;">&mdash; Sawai Padmanabh Singh of Jaipur</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Floating Action Buttons (WhatsApp / Socials) -->
+  <a href="https://wa.me/911412345678?text=Pranam%20RajMahal,%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20stay." class="floating-whatsapp" target="_blank" title="Royal Concierge Inquiries">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.58 1.982 14.11 1.05 11.48 1.05c-5.44 0-9.863 4.37-9.867 9.801 0 1.63.454 3.223 1.314 4.634L1.93 21.13l5.862-1.526-.145-.45zM17.65 15.34c-.312-.156-1.848-.91-2.133-1.013-.284-.104-.49-.156-.697.156-.207.312-.803 1.013-.984 1.22-.18.207-.362.233-.674.078-1.545-.773-2.583-1.284-3.606-3.045-.27-.464.27-.43.774-1.436.084-.168.042-.314-.021-.443-.064-.13-.544-1.312-.746-1.795-.196-.474-.396-.41-.544-.417l-.464-.008c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2.01s.87 2.33.99 2.49c.12.16 1.71 2.62 4.15 3.67 1.83.79 2.5 1.01 3.4.85.54-.1.1.28.32-.23c.22-.52.22-1 .16-1.1s-.24-.16-.55-.315z"/>
+    </svg>
+  </a>
+
+  <!-- 8. Premium Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about-col">
+          <div class="footer-logo">RAJM<span>A</span>HAL</div>
+          <div class="footer-tagline">Royal Indian Hospitality</div>
+          <p class="footer-desc">
+            Step into a world of timeless majesty and unparalleled heritage, where the grandeur of ancient India meets modern-day five-star luxury.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="rooms.html" class="footer-link">Suites & Rooms</a></li>
+            <li><a href="dining.html" class="footer-link">Royal Dining</a></li>
+            <li><a href="spa.html" class="footer-link">Jiva Spa & Wellness</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Experiences</h4>
+          <ul class="footer-links">
+            <li><a href="events.html" class="footer-link">Weddings & Celebrations</a></li>
+            <li><a href="gallery.html" class="footer-link">Visual Gallery</a></li>
+            <li><a href="about.html" class="footer-link">Heritage & Story</a></li>
+            <li><a href="contact.html" class="footer-link">Reservations Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Royal Estate</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>RajMahal Palace, Palace Road, Jaipur, Rajasthan, 302001, India</span>
+            </li>
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 141 234 5678</span>
+            </li>
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>reservations@rajmahalpalace.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 RajMahal Palace & Resorts. All Rights Reserved. Crafted for Ultimate Luxury.</div>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

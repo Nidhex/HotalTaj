@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperial Fine Dining | RajMahal Palace Hotel Jaipur</title>
+  <meta name="description" content="Discover royal Rajasthani and Awadhi fine dining at RajMahal Palace. Explore award-winning restaurants, high tea salons, and moonlit alfresco courtyards.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* Custom Dining Page Styles */
+    .dining-hero {
+      height: 50vh;
+      background-image: linear-gradient(to bottom, rgba(5,5,5,0.4), rgba(5,5,5,0.95)), url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 6rem;
+    }
+
+    .dining-venue-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-bottom: 8rem;
+    }
+
+    .dining-venue-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .dining-venue-row.reverse {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .dining-venue-row.reverse .venue-img-col {
+      order: 2;
+    }
+
+    .venue-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 240, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 240, 0.1);
+      padding: 1rem 0;
+    }
+
+    .venue-meta-item {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .venue-meta-item strong {
+      color: var(--gold-primary);
+      display: block;
+      font-family: var(--font-royal);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    @media (max-width: 991px) {
+      .dining-venue-row, .dining-venue-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .dining-venue-row.reverse .venue-img-col {
+        order: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Luxury Royal Preloader -->
+  <div id="preloader">
+    <div class="preloader-brand">
+      <div class="preloader-mandala"></div>
+      <h1 class="preloader-logo gold-text">RAJM<span style="color:var(--text-light)">A</span>HAL</h1>
+      <p class="preloader-tagline">Timeless Majesty &bull; Royal Indian Hospitality</p>
+    </div>
+    <div class="preloader-bar-container">
+      <div class="preloader-bar"></div>
+    </div>
+  </div>
+
+  <!-- 2. Premium Floating Navbar -->
+  <div class="navbar-wrapper">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html" class="navbar-logo">RAJM<span>A</span>HAL</a>
+        <span class="navbar-tagline">Palace & Resorts</span>
+      </div>
+      
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="rooms.html" class="navbar-link">Suites</a></li>
+        <li><a href="dining.html" class="navbar-link active">Dining</a></li>
+        <li><a href="spa.html" class="navbar-link">Wellness</a></li>
+        <li><a href="events.html" class="navbar-link">Events</a></li>
+        <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+        <li><a href="about.html" class="navbar-link">Heritage</a></li>
+        <li><a href="contact.html" class="navbar-link">Reservations</a></li>
+      </ul>
+
+      <div class="navbar-actions">
+        <!-- Ambient sound controller -->
+        <div class="audio-toggle-container" title="Toggle royal Indian ambiance audio">
+          <span class="audio-label">Ambiance: OFF</span>
+          <div class="audio-bars">
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+            <div class="audio-bar"></div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.75rem;">Book Stay</a>
+      </div>
+
+      <button class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- 3. Dining Hero Banner -->
+  <header class="dining-hero">
+    <div class="container">
+      <div class="reveal-scale">
+        <span class="section-subtitle">Gastronomy Worthy of Crowns</span>
+        <h1 class="gold-text" style="font-size: clamp(2rem, 5vw, 4rem);">Imperial Gastronomy</h1>
+        <div class="section-divider"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4. Dining Venues Showcase -->
+  <section style="background-color: var(--bg-dark);">
+    <div class="container">
+      
+      <!-- Venue 1: The Durbar Hall -->
+      <div class="dining-venue-row">
+        <div class="venue-img-col reveal-left">
+          <div style="border: 1px solid var(--gold-primary); padding: 1rem; border-radius: 4px; box-shadow: var(--glow-shadow);">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800" alt="The Durbar Hall Restaurant" style="width: 100%; border-radius: 2px; height: 450px; object-fit: cover;">
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="section-subtitle" style="text-align: left; margin-bottom: 0.5rem;">Authentic Royal Cuisine</span>
+          <h2 style="font-family: var(--font-serif); text-transform: capitalize; margin-bottom: 1.5rem;">The Durbar Hall</h2>
+          <p style="margin-bottom: 1.5rem; font-weight: 300; line-height: 1.8;">
+            Step into the grandeur of medieval Indian courts. High gold-leaf columns, massive antique chandeliers, and dynamic live Indian sitar performances shape a dramatic luxury atmosphere. 
+          </p>
+          <p style="margin-bottom: 1.5rem; font-weight: 300; line-height: 1.8; font-style: italic; color: var(--gold-light);">
+            "Our royal culinary team has decoded ancient court recipes of the Rajputana and Awadh empires, preparing dishes in slow-burning copper cauldrons with organic saffron, hand-ground masalas, and edible 24k gold leaf details."
+          </p>
+          
+          <div class="venue-meta">
+            <div class="venue-meta-item">
+              <strong>Timings</strong>
+              Lunch: 12:30 PM - 3:30 PM<br>Dinner: 7:00 PM - 11:30 PM
+            </div>
+            <div class="venue-meta-item">
+              <strong>Attire</strong>
+              Royal Formal / Elegant Ethnic
+            </div>
+            <div class="venue-meta-item">
+              <strong>Signature</strong>
+              Royal Lal Maas &bull; Saffron Shahi Tukda
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Venue 2: Sheesh Mahal Lounge -->
+      <div class="dining-venue-row reverse">
+        <div class="venue-img-col reveal-right">
+          <div style="border: 1px solid var(--gold-primary); padding: 1rem; border-radius: 4px; box-shadow: var(--glow-shadow);">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800" alt="Sheesh Mahal Mirror Lounge" style="width: 100%; border-radius: 2px; height: 450px; object-fit: cover;">
+          </div>
+        </div>
+        <div class="reveal-left">
+          <span class="section-subtitle" style="text-align: left; margin-bottom: 0.5rem;">High Tea & Champagnes</span>
+          <h2 style="font-family: var(--font-serif); text-transform: capitalize; margin-bottom: 1.5rem;">Sheesh Mahal</h2>
+          <p style="margin-bottom: 1.5rem; font-weight: 300; line-height: 1.8;">
+            A breathtaking room lined with over thirty-thousand individually hand-cut convex mirrors and fine Belgian crystals, reflecting candlelight in a cosmic glow. 
+          </p>
+          <p style="margin-bottom: 1.5rem; font-weight: 300; line-height: 1.8; font-style: italic; color: var(--gold-light);">
+            "Enjoy our bespoke 'Maharaja Afternoon High Tea' service, pairing organic Kashmiri Kahwa or rare single-estate Darjeeling leaves with gold-dusted French pastries and light tandoor treats."
+          </p>
+
+          <div class="venue-meta">
+            <div class="venue-meta-item">
+              <strong>Timings</strong>
+              High Tea: 3:00 PM - 6:30 PM<br>Cocktails: 7:00 PM - 1:00 AM
+            </div>
+            <div class="venue-meta-item">
+              <strong>Attire</strong>
+              Smart Casual / Luxe Lounge
+            </div>
+            <div class="venue-meta-item">
+              <strong>Signature</strong>
+              Gold Saffron Infused Kahwa Tea
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Venue 3: The Peacock Courtyard -->
+      <div class="dining-venue-row">
+        <div class="venue-img-col reveal-left">
+          <div style="border: 1px solid var(--gold-primary); padding: 1rem; border-radius: 4px; box-shadow: var(--glow-shadow);">
+            <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?q=80&w=800" alt="The Peacock Courtyard Dining" style="width: 100%; border-radius: 2px; height: 450px; object-fit: cover;">
+          </div>
+        </div>
+        <div class="reveal-right">
+          <span class="section-subtitle" style="text-align: left; margin-bottom: 0.5rem;">Alfresco Under the Stars</span>
+          <h2 style="font-family: var(--font-serif); text-transform: capitalize; margin-bottom: 1.5rem;">The Peacock Courtyard</h2>
+          <p style="margin-bottom: 1.5rem; font-weight: 300; line-height: 1.8;">
+            Dine outdoors next to our majestic hand-carved white marble peacock fountain, surrounded by flickering clay lamps (diyas), jasmine garlands, and custom silk canopies.
+          </p>
+          <p style="margin-bottom: 1.5rem; font-weight: 300; line-height: 1.8; font-style: italic; color: var(--gold-light);">
+            "Specializes in organic woodfired flatbreads, slow-charred tandoori lobster, and signature cocktails crafted with Himalayan herbs, local rosewater, and fresh organic cardamoms."
+          </p>
+
+          <div class="venue-meta">
+            <div class="venue-meta-item">
+              <strong>Timings</strong>
+              Dinner only: 7:30 PM - 11:30 PM<br>(Reservations Required)
+            </div>
+            <div class="venue-meta-item">
+              <strong>Attire</strong>
+              Resort Chic / Traditional Elegant
+            </div>
+            <div class="venue-meta-item">
+              <strong>Signature</strong>
+              Charred Tandoori Lobster &amp; Rose-Gin
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Specialized Dining Reservation Section -->
+  <section style="background-color: var(--bg-royal); position: relative;">
+    <div class="container" style="max-width: 800px;">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Secure Your Table</span>
+        <h2>Reserve Culinary Experience</h2>
+        <div class="section-divider"></div>
+        <p style="margin-top: 1.5rem;">Our tables are highly sought after by culinary enthusiasts globally. Please submit an inquiry at least 48 hours in advance.</p>
+      </div>
+
+      <form class="glass-card reveal-scale" style="padding: 4rem 3rem;" onsubmit="handleDiningSubmit(event)">
+        <div class="luxury-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div class="form-group">
+              <input type="text" id="dining-name" class="luxury-input" placeholder=" " required>
+              <label for="dining-name" class="luxury-label">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="dining-email" class="luxury-input" placeholder=" " required>
+              <label for="dining-email" class="luxury-label">Email Address</label>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1.2fr 1fr 0.8fr; gap: 2rem;">
+            <div class="form-group">
+              <select id="dining-venue" class="luxury-input" style="color: var(--text-light); background-color: var(--bg-dark);" required>
+                <option value="" disabled selected></option>
+                <option value="durbar">The Durbar Hall (Fine Dining)</option>
+                <option value="sheesh">Sheesh Mahal (High Tea/Drinks)</option>
+                <option value="peacock">The Peacock Courtyard (Alfresco)</option>
+              </select>
+              <label for="dining-venue" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Select Salon / Venue</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="date" id="dining-date" class="luxury-input" required>
+              <label for="dining-date" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Preferred Date</label>
+            </div>
+
+            <div class="form-group">
+              <select id="dining-guests" class="luxury-input" style="color: var(--text-light); background-color: var(--bg-dark);" required>
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5 Guests</option>
+                <option value="6">6+ Guests</option>
+              </select>
+              <label for="dining-guests" class="luxury-label" style="top: -1.2rem; font-size: 0.65rem; color: var(--gold-primary);">Seats</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="dining-notes" class="luxury-input" placeholder=" ">
+            <label for="dining-notes" class="luxury-label">Dietary Preferences or Special Occasions (Optional)</label>
+          </div>
+
+          <button type="submit" class="btn-gold" style="align-self: center; margin-top: 1.5rem;">Request Royal Table</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 6. Floating Action Buttons (WhatsApp / Socials) -->
+  <a href="https://wa.me/911412345678?text=Pranam%20RajMahal,%20I%20would%20like%20to%20inquire%20about%20a%20luxury%20stay." class="floating-whatsapp" target="_blank" title="Royal Concierge Inquiries">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.58 1.982 14.11 1.05 11.48 1.05c-5.44 0-9.863 4.37-9.867 9.801 0 1.63.454 3.223 1.314 4.634L1.93 21.13l5.862-1.526-.145-.45zM17.65 15.34c-.312-.156-1.848-.91-2.133-1.013-.284-.104-.49-.156-.697.156-.207.312-.803 1.013-.984 1.22-.18.207-.362.233-.674.078-1.545-.773-2.583-1.284-3.606-3.045-.27-.464.27-.43.774-1.436.084-.168.042-.314-.021-.443-.064-.13-.544-1.312-.746-1.795-.196-.474-.396-.41-.544-.417l-.464-.008c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2.01s.87 2.33.99 2.49c.12.16 1.71 2.62 4.15 3.67 1.83.79 2.5 1.01 3.4.85.54-.1.1.28.32-.23c.22-.52.22-1 .16-1.1s-.24-.16-.55-.315z"/>
+    </svg>
+  </a>
+
+  <!-- 7. Premium Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about-col">
+          <div class="footer-logo">RAJM<span>A</span>HAL</div>
+          <div class="footer-tagline">Royal Indian Hospitality</div>
+          <p class="footer-desc">
+            Step into a world of timeless majesty and unparalleled heritage, where the grandeur of ancient India meets modern-day five-star luxury.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="rooms.html" class="footer-link">Suites & Rooms</a></li>
+            <li><a href="dining.html" class="footer-link">Royal Dining</a></li>
+            <li><a href="spa.html" class="footer-link">Jiva Spa & Wellness</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Experiences</h4>
+          <ul class="footer-links">
+            <li><a href="events.html" class="footer-link">Weddings & Celebrations</a></li>
+            <li><a href="gallery.html" class="footer-link">Visual Gallery</a></li>
+            <li><a href="about.html" class="footer-link">Heritage & Story</a></li>
+            <li><a href="contact.html" class="footer-link">Reservations Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Royal Estate</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-map-location-dot"></i>
+              <span>RajMahal Palace, Palace Road, Jaipur, Rajasthan, 302001, India</span>
+            </li>
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 141 234 5678</span>
+            </li>
+            <li class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>reservations@rajmahalpalace.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 RajMahal Palace & Resorts. All Rights Reserved. Crafted for Ultimate Luxury.</div>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core JavaScript -->
+  <script src="js/main.js"></script>
+
+  <!-- Handle Form Booking Alert dynamically -->
+  <script>
+    function handleDiningSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('dining-name').value;
+      const venueSelect = document.getElementById('dining-venue');
+      const venue = venueSelect.options[venueSelect.selectedIndex].text;
+      const date = document.getElementById('dining-date').value;
+      const guests = document.getElementById('dining-guests').value;
+
+      // Custom themed confirmation modal
+      const modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.top = '0';
+      modal.style.left = '0';
+      modal.style.width = '100vw';
+      modal.style.height = '100vh';
+      modal.style.background = 'rgba(5, 5, 5, 0.9)';
+      modal.style.backdropFilter = 'blur(10px)';
+      modal.style.display = 'flex';
+      modal.style.justifyContent = 'center';
+      modal.style.alignItems = 'center';
+      modal.style.zIndex = '100000';
+      modal.style.opacity = '0';
+      modal.style.transition = 'opacity 0.5s ease';
+
+      modal.innerHTML = `
+        <div class="glass-card" style="padding: 4rem; max-width: 550px; text-align: center; border: 1px solid var(--gold-primary); box-shadow: var(--glow-shadow-strong);">
+          <div class="preloader-mandala" style="margin: 0 auto 2rem auto; width: 80px; height: 80px;"></div>
+          <h2 class="gold-text" style="font-size: 2rem; margin-bottom: 1.5rem;">Table Requested</h2>
+          <p style="color: var(--text-light); margin-bottom: 1.5rem; font-family: var(--font-serif); font-style: italic;">
+            "Pranam ${name}. Your table request has been received."
+          </p>
+          <div style="text-align: left; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 4px; margin-bottom: 2rem; border-left: 3px solid var(--gold-primary); font-size: 0.9rem;">
+            <div style="margin-bottom: 0.5rem;"><strong style="color: var(--gold-primary);">Venue:</strong> ${venue}</div>
+            <div style="margin-bottom: 0.5rem;"><strong style="color: var(--gold-primary);">Date:</strong> ${date}</div>
+            <div><strong style="color: var(--gold-primary);">Seats:</strong> ${guests} Guests</div>
+          </div>
+          <p style="font-size: 0.8rem; margin-bottom: 2rem; color: var(--text-muted);">
+            Our Royal Maître d' will review seating arrangements and contact you shortly.
+          </p>
+          <button class="btn-gold" id="close-modal-btn">Accept Invitation</button>
+        </div>
+      `;
+
+      document.body.appendChild(modal);
+      
+      setTimeout(() => {
+        modal.style.opacity = '1';
+      }, 50);
+
+      document.getElementById('close-modal-btn').addEventListener('click', () => {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+          modal.remove();
+          event.target.reset(); // clear form
+        }, 500);
+      });
+    }
+
+    // Set minimum date for dinner reservation to today
+    const dInput = document.getElementById('dining-date');
+    if (dInput) {
+      dInput.min = new Date().toISOString().split('T')[0];
+    }
+  </script>
+</body>
+</html>

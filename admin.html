@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Court | RajMahal Palace Hotel Admin Management</title>
+  <meta name="description" content="Secure administrative gateway for RajMahal Palace Hotel reservations, suite configurations, and dynamic analytics.">
+
+  <!-- Core Dashboard CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="admin-body">
+
+  <!-- 1. Secure Royal Login Gate -->
+  <div id="admin-login-gate" class="login-gate-overlay">
+    <div class="login-gate-card glass-card reveal-scale active">
+      <div class="preloader-mandala" style="margin: 0 auto 2rem auto; width: 70px; height: 70px;"></div>
+      <h2 class="gold-text" style="font-size: 1.8rem; margin-bottom: 0.5rem; text-align: center;">Royal Court Entrance</h2>
+      <p class="preloader-tagline" style="text-align: center; margin-bottom: 2.5rem; color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">RajMahal Hotel Management Gate</p>
+      
+      <form id="admin-gate-form">
+        <div class="royal-form-group">
+          <label class="royal-form-label"><i class="fa-solid fa-envelope" style="margin-right: 0.5rem; color: var(--gold-primary);"></i>Courtier Email</label>
+          <input type="email" id="admin-email" class="royal-form-input" placeholder="enter admin credentials" required autocomplete="username">
+        </div>
+        <div class="royal-form-group">
+          <label class="royal-form-label"><i class="fa-solid fa-key" style="margin-right: 0.5rem; color: var(--gold-primary);"></i>Secret Passcode</label>
+          <input type="password" id="admin-password" class="royal-form-input" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <div id="admin-gate-error" style="color: #e74c3c; font-size: 0.85rem; margin-bottom: 1.5rem; display: none; text-align: left; background: rgba(231,76,60,0.08); padding: 0.8rem; border-left: 2px solid #e74c3c; border-radius: 2px;"></div>
+        <button type="submit" class="btn-gold" style="width: 100%; margin-top: 1rem; padding: 1rem 2rem;">Unlock Palace Gates</button>
+      </form>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="index.html" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;"><i class="fa-solid fa-arrow-left" style="margin-right: 0.4rem;"></i>Return to Public Palace</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Main Executive Admin Console (Hidden initially until token validated) -->
+  <div id="admin-main-console" class="admin-dashboard-container" style="display: none;">
+    
+    <!-- Sidebar Controls -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <h1 class="sidebar-logo gold-text">RAJM<span>A</span>HAL</h1>
+        <p class="sidebar-tagline">Royal Court Administration</p>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#analytics" class="sidebar-menu-link active" data-target="viewport-analytics">
+          <i class="fa-solid fa-chart-line"></i><span>Court Analytics</span>
+        </a>
+        <a href="#bookings" class="sidebar-menu-link" data-target="viewport-bookings">
+          <i class="fa-solid fa-calendar-check"></i><span>Stay Chronicles</span>
+        </a>
+        <a href="#rooms" class="sidebar-menu-link" data-target="viewport-rooms">
+          <i class="fa-solid fa-crown"></i><span>Chamber Inventory</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="courtier-profile">
+          <i class="fa-solid fa-user-shield courtier-icon"></i>
+          <div class="courtier-info">
+            <div id="courtier-name" class="courtier-name">Ambassador</div>
+            <div id="courtier-role" class="courtier-role">Concierge</div>
+          </div>
+        </div>
+        <button id="admin-signout-btn" class="btn-outline-white" style="width: 100%; padding: 0.6rem; font-size: 0.75rem; border-color: rgba(212,175,55,0.2);"><i class="fa-solid fa-right-from-bracket" style="margin-right: 0.5rem; color: var(--gold-primary);"></i>Leave Court</button>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Viewports -->
+    <main class="admin-main-viewport">
+      
+      <!-- Top Action Bar -->
+      <header class="admin-top-bar">
+        <div class="breadcrumb">
+          <span class="root-breadcrumb">Palace Registry</span> &bull; <span id="current-viewport-title" class="active-breadcrumb">Court Analytics</span>
+        </div>
+        <div class="admin-badge-indicator">
+          <span class="badge-dot"></span>
+          <span style="font-size: 0.75rem; font-family: var(--font-royal); letter-spacing: 0.1em; color: var(--gold-primary);">Server Online</span>
+        </div>
+      </header>
+
+      <!-- Viewport 1: Analytics Overview -->
+      <section id="viewport-analytics" class="viewport-section active">
+        
+        <!-- Premium Analytics Metric Row -->
+        <div class="analytics-row">
+          
+          <!-- Card 1: Revenue -->
+          <div class="metric-card glass-card">
+            <div class="metric-icon-wrap"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+            <div class="metric-meta">
+              <span class="metric-label">Imperial Revenue</span>
+              <h3 id="stat-revenue" class="metric-val">₹0</h3>
+              <p class="metric-desc">Dynamic cumulative gross</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Total Bookings -->
+          <div class="metric-card glass-card">
+            <div class="metric-icon-wrap"><i class="fa-solid fa-book-bookmark"></i></div>
+            <div class="metric-meta">
+              <span class="metric-label">Total Bookings</span>
+              <h3 id="stat-total-bookings" class="metric-val">0</h3>
+              <p class="metric-desc">Lifetime reservation orders</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Active Bookings -->
+          <div class="metric-card glass-card">
+            <div class="metric-icon-wrap"><i class="fa-solid fa-bell"></i></div>
+            <div class="metric-meta">
+              <span class="metric-label">Active Stays</span>
+              <h3 id="stat-active-bookings" class="metric-val">0</h3>
+              <p class="metric-desc">Confirmed ongoing residencies</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Room Occupancy -->
+          <div class="metric-card glass-card">
+            <div class="metric-icon-wrap"><i class="fa-solid fa-circle-nodes"></i></div>
+            <div class="metric-meta">
+              <span class="metric-label">Chamber Occupancy</span>
+              <h3 id="stat-occupancy" class="metric-val">0%</h3>
+              <p class="metric-desc">Active suites ratio</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Analytical Distribution Section -->
+        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; margin-top: 3rem;">
+          
+          <div class="glass-card analytics-table-panel" style="padding: 2.5rem;">
+            <h3 class="panel-header-title">Recent Royal Bookings</h3>
+            <div class="section-divider" style="margin: 1rem 0 2.5rem 0; width: 60px;"></div>
+            <div style="overflow-x: auto;">
+              <table class="court-table" id="recent-bookings-table">
+                <thead>
+                  <tr>
+                    <th>Resident</th>
+                    <th>Chamber</th>
+                    <th>Dates</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Filled dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="glass-card analytics-table-panel" style="padding: 2.5rem; text-align: left;">
+            <h3 class="panel-header-title">Chamber Breakdown</h3>
+            <div class="section-divider" style="margin: 1rem 0 2.5rem 0; width: 60px;"></div>
+            <div id="chamber-breakdown-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <!-- Seeded dynamically -->
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Viewport 2: Stay Chronicles (All bookings registry) -->
+      <section id="viewport-bookings" class="viewport-section">
+        <div class="panel-heading-row">
+          <div>
+            <h2 class="panel-section-title">Palace Stay Chronicles</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.3rem;">Audit and manage all lifetime customer reservations and statuses</p>
+          </div>
+          <button class="btn-gold" id="refresh-bookings-btn" style="padding: 0.6rem 1.2rem; font-size: 0.75rem;"><i class="fa-solid fa-arrows-rotate" style="margin-right: 0.5rem;"></i>Sync Records</button>
+        </div>
+
+        <div class="glass-card table-panel" style="margin-top: 2rem; padding: 2rem;">
+          <div style="overflow-x: auto;">
+            <table class="court-table" id="all-bookings-table">
+              <thead>
+                <tr>
+                  <th>Reference ID</th>
+                  <th>Guest Profile</th>
+                  <th>Chamber Assignment</th>
+                  <th>Stay Duration</th>
+                  <th>Grand Price</th>
+                  <th>Current State</th>
+                  <th>Action Logs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Filled dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Viewport 3: Chamber Inventory (Suite Manager) -->
+      <section id="viewport-rooms" class="viewport-section">
+        <div class="panel-heading-row">
+          <div>
+            <h2 class="panel-section-title">Royal Chamber Inventory</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.3rem;">Configure suite rates, descriptions, and structural listings</p>
+          </div>
+          <button class="btn-gold" id="add-room-trigger-btn" style="padding: 0.6rem 1.2rem; font-size: 0.75rem;"><i class="fa-solid fa-plus" style="margin-right: 0.5rem;"></i>Unveil New Chamber</button>
+        </div>
+
+        <!-- Add/Edit Room Modal form drawer (toggled inside page) -->
+        <div id="room-form-overlay" class="drawer-overlay" style="display: none;">
+          <div class="drawer-card glass-card">
+            <button class="drawer-close" id="close-room-drawer">&times;</button>
+            <h3 id="room-drawer-title" class="gold-text" style="font-size: 1.4rem; margin-bottom: 1.5rem;">Add New Chamber</h3>
+            
+            <form id="admin-room-form">
+              <input type="hidden" id="form-room-id">
+              
+              <div class="royal-form-group">
+                <label class="royal-form-label">Chamber Number / Code (Unique)</label>
+                <input type="text" id="room-number" class="royal-form-input" placeholder="e.g., M-103" required>
+              </div>
+
+              <div class="royal-form-group">
+                <label class="royal-form-label">Chamber Name</label>
+                <input type="text" id="room-name" class="royal-form-input" placeholder="e.g., Jaipur Royal Sanctuary" required>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="royal-form-group">
+                  <label class="royal-form-label">Chamber Class</label>
+                  <select id="room-class-select" class="royal-form-input" style="background-color: var(--bg-dark);">
+                    <option value="room">Heritage Chamber</option>
+                    <option value="suite">Master Suite</option>
+                    <option value="villa">Imperial Villa</option>
+                  </select>
+                </div>
+                <div class="royal-form-group">
+                  <label class="royal-form-label">Max Guests Capacity</label>
+                  <input type="number" id="room-capacity" class="royal-form-input" min="1" max="10" value="2" required>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="royal-form-group">
+                  <label class="royal-form-label">Price per Night (₹ INR)</label>
+                  <input type="number" id="room-price" class="royal-form-input" min="0" placeholder="e.g., 75000" required>
+                </div>
+                <div class="royal-form-group">
+                  <label class="royal-form-label">Primary Cover Image URL</label>
+                  <input type="url" id="room-image" class="royal-form-input" placeholder="https://unsplash.com/..." required>
+                </div>
+              </div>
+
+              <div class="royal-form-group">
+                <label class="royal-form-label">Amenities (Separated by commas)</label>
+                <input type="text" id="room-amenities" class="royal-form-input" placeholder="e.g., 24-Hour Butler, Private Plunge Pool, Sitar Solitude">
+              </div>
+
+              <div class="royal-form-group">
+                <label class="royal-form-label">Detailed Chronicle / Description</label>
+                <textarea id="room-desc" class="royal-form-input" rows="4" placeholder="Enter luxurious editorial chronicle describing the space..." required></textarea>
+              </div>
+
+              <div id="room-form-error" style="color: #e74c3c; font-size: 0.8rem; margin-bottom: 1rem; display: none;"></div>
+
+              <button type="submit" class="btn-gold" style="width: 100%; margin-top: 1rem; padding: 0.8rem;">Enscribe Chamber details</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Room Inventory Cards display Grid -->
+        <div class="rooms-grid" id="admin-rooms-grid" style="margin-top: 2rem;">
+          <!-- Loaded dynamically -->
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Loading Screen Preloader fallbacks -->
+  <div id="admin-preloader" class="admin-preloader-screen" style="display: none;">
+    <div class="preloader-mandala"></div>
+    <p style="color: var(--gold-primary); margin-top: 1rem; font-family: var(--font-royal); letter-spacing: 0.15em;">Synchronizing with the Royal Court...</p>
+  </div>
+
+  <!-- Global Admin API Handler -->
+  <script src="js/admin.js"></script>
+</body>
+
+</html>
