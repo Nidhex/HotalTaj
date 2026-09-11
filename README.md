@@ -5,11 +5,21 @@
   # ✨ TAJ GRAND PALACE & RESORT
   ### *Full-Stack Luxury Hospitality & Online Booking Solution*
 
-  [![Live Demo](https://img.shields.io/badge/🌐_LIVE_DEMO-Visit_Website-00C853?style=for-the-badge&logoColor=white)](https://your-demo-hotel-link.vercel.app)
-  [![Admin Panel](https://img.shields.io/badge/🔑_ADMIN_PANEL-Access_Dashboard-D500F9?style=for-the-badge&logoColor=white)](https://your-demo-hotel-link.vercel.app/admin.html)
-  [![Hire Freelancer](https://img.shields.io/badge/💼_HIRE_ME-Available_for_Projects-FFD600?style=for-the-badge&logo=upwork&logoColor=black)](#-hire-me--freelance-services)
-
   <br />
+
+  <a href="https://hotal-taj.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_LIVE_DEMO-Visit_Website-00C853?style=for-the-badge&logoColor=white" alt="Live Demo" />
+  </a>
+  &nbsp;
+  <a href="https://hotal-taj.vercel.app/admin.html" target="_blank">
+    <img src="https://img.shields.io/badge/🔑_ADMIN_PANEL-Access_Dashboard-D500F9?style=for-the-badge&logoColor=white" alt="Admin Panel" />
+  </a>
+  &nbsp;
+  <a href="#-hire-me--freelance-services">
+    <img src="https://img.shields.io/badge/💼_HIRE_ME-Available_for_Projects-FFD600?style=for-the-badge&logo=upwork&logoColor=black" alt="Hire Me" />
+  </a>
+
+  <br /><br />
 
   ```
   ┌─────────────────────────────────────────────────────────────────────────┐
@@ -44,23 +54,27 @@
 
 ---
 
-## 📸 Visual Gallery & Interface Preview
+## 🌟 Live Demo Links
 
-> [!TIP]
-> *Replace the placeholder URLs below with real screenshots or GIFs of your running application to maximize client conversions!*
+- 🌐 **Guest Website**: [https://hotal-taj.vercel.app/](https://hotal-taj.vercel.app/)
+- 🔑 **Admin Dashboard**: [https://hotal-taj.vercel.app/admin.html](https://hotal-taj.vercel.app/admin.html)
+
+---
+
+## 📸 Visual Gallery & Interface Preview
 
 <div align="center">
 
 | 🏨 Luxury Home & Hero Section | 🛌 Suite Booking Engine |
 | :---: | :---: |
-| <img src="https://raw.githubusercontent.com/username/repository/main/screenshots/home-preview.png" width="400" alt="Home Screen" onError="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80'" /> | <img src="https://raw.githubusercontent.com/username/repository/main/screenshots/rooms-preview.png" width="400" alt="Rooms Screen" onError="this.src='https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80'" /> |
+| <a href="https://hotal-taj.vercel.app/"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80" width="400" alt="Home Screen" /></a> | <a href="https://hotal-taj.vercel.app/rooms.html"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80" width="400" alt="Rooms Screen" /></a> |
 | *Modern hero banner with instant search* | *Interactive guest filters & instant rates* |
 
 <br />
 
 | 🍽️ Fine Dining Reservations | 🔑 Admin Control Center |
 | :---: | :---: |
-| <img src="https://raw.githubusercontent.com/username/repository/main/screenshots/dining-preview.png" width="400" alt="Dining Screen" onError="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80'" /> | <img src="https://raw.githubusercontent.com/username/repository/main/screenshots/admin-preview.png" width="400" alt="Admin Screen" onError="this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80'" /> |
+| <a href="https://hotal-taj.vercel.app/dining.html"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=80" width="400" alt="Dining Screen" /></a> | <a href="https://hotal-taj.vercel.app/admin.html"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80" width="400" alt="Admin Screen" /></a> |
 | *Gourmet table booking & menu preview* | *Real-time booking management & metrics* |
 
 </div>
@@ -126,10 +140,10 @@ Make sure you have installed:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/taj-hotel-resort.git
+git clone https://github.com/Nidhex/HotalTaj.git
 
 # Enter project root directory
-cd taj-hotel-resort
+cd HotalTaj
 ```
 
 ### 3️⃣ Backend API Setup
@@ -145,7 +159,7 @@ Create a `.env` file inside the `backend` folder:
 PORT=5000
 MONGO_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/hotel_taj?retryWrites=true&w=majority
 JWT_SECRET=taj_super_secret_key_2026
-CLIENT_URL=http://localhost:3000
+CLIENT_URL=https://hotal-taj.vercel.app
 ```
 
 Start the backend server:
@@ -167,7 +181,7 @@ Since the frontend is built using native web standards, simply open `index.html`
 npx serve ./
 ```
 
-🌐 Open your browser at **`http://localhost:3000`**
+🌐 Open your browser at **`http://localhost:3000`** or access the live deployment at **`https://hotal-taj.vercel.app/`**
 
 ---
 
@@ -213,7 +227,7 @@ npx serve ./
 
 ---
 
-## 🤝 Let's Work Together!
+## 🤝 Hire Me / Freelance Services
 
 If you are looking for a reliable full-stack web developer to build your hotel site, e-commerce store, or custom SaaS web app, let's connect:
 
@@ -222,12 +236,15 @@ If you are looking for a reliable full-stack web developer to build your hotel s
 <a href="mailto:your.email@example.com">
   <img src="https://img.shields.io/badge/Email_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
+&nbsp;
 <a href="https://linkedin.com">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
+&nbsp;
 <a href="https://upwork.com">
   <img src="https://img.shields.io/badge/Upwork-63E6BE?style=for-the-badge&logo=upwork&logoColor=black" />
 </a>
+&nbsp;
 <a href="https://fiverr.com">
   <img src="https://img.shields.io/badge/Fiverr-1DBF73?style=for-the-badge&logo=fiverr&logoColor=white" />
 </a>
