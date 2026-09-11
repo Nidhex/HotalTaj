@@ -233,11 +233,11 @@ If you are looking for a reliable full-stack web developer to build your hotel s
 
 <div align="center">
 
-<a href="mailto:your.email@example.com">
+<a href="mailto:nidsvaishnav10@gmail.com">
   <img src="https://img.shields.io/badge/Email_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
 &nbsp;
-<a href="https://linkedin.com">
+<a href="https://www.linkedin.com/in/nidhish-vaishnav-0aa288386/" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
 &nbsp;
